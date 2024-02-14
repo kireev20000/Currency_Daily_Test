@@ -8,11 +8,10 @@ class Сurrency(models.Model):
     name = models.CharField(max_length=200, verbose_name='Название')
     value = models.DecimalField(max_digits=10,
                                 decimal_places=5,
-                                verbose_name='Курс'
-                                )
+                                verbose_name='Курс')
 
     def __str__(self):
-        return f"{self.date} - {self.char_code} {self.name}: {self.value}"
+        return f"{self.date} - {self.char_code} - {self.name}: {self.value}"
 
     class Meta:
         ordering = ["-date"]

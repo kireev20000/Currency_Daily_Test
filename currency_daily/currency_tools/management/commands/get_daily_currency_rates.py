@@ -12,7 +12,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         try:
-            request = requests.get("https://www.cbr-xml-daily.ru/daily_json.js")
+            request = requests.get('https://www.cbr-xml-daily.ru/daily_json.js')
             json_data = request.json()
             parse_date = datetime.strptime(json_data.get('Date'), '%Y-%m-%dT%H:%M:%S%z').date()
             valute = json_data.get('Valute')
